@@ -21,5 +21,5 @@ int	ft_putstr(char *s, int count);
 int	ft_putnbr(int n, int count);
 int	ft_unsigned(unsigned int n, int count);
 int	ft_hex(unsigned int n, int count, char form);
-int	ft_pointer(void *s, int count);
+int	ft_pointer(unsigned long s, int count);
 #endif

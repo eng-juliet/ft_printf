@@ -6,7 +6,7 @@
 /*   By: jhaddadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:46:35 by jhaddadi          #+#    #+#             */
-/*   Updated: 2024/09/23 14:31:47 by jhaddadi         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:20:13 by jhaddadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -21,7 +21,7 @@ int	ft_hex(unsigned int num, int count, char form)
 {
 	int		n;
 	int		i;
-	char	st[8];
+	char	st[16];
 
 	i = 0;
 	if (num == 0)
