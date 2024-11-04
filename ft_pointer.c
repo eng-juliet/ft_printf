@@ -6,18 +6,12 @@
 /*   By: jhaddadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:33:11 by jhaddadi          #+#    #+#             */
-/*   Updated: 2024/10/07 13:29:24 by jhaddadi         ###   ########.fr       */
+/*   Updated: 2024/10/21 12:08:22 by jhaddadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	ft_zerocase2(int count)
-{
-	write(1, "0", 1);
-	return (++count);
-}
-
-static int	ft_hex2(unsigned long num, int count, char form)
+static int	ft_hex2(unsigned long num, int count)
 {
 	int		n;
 	int		i;
@@ -25,19 +19,17 @@ static int	ft_hex2(unsigned long num, int count, char form)
 
 	i = 0;
 	if (num == 0)
-		return (ft_zerocase2(count));
+	{
+		write(1, "0", 1);
+		return (++count);
+	}
 	while (num > 0)
 	{
 		n = num % 16;
 		if (n < 10)
 			st[i++] = n + '0';
 		else
-		{
-			if (form == 'x')
-				st[i++] = n + 87;
-			else
-				st[i++] = n + 55;
-		}
+			st[i++] = n + 87;
 		num = num / 16;
 	}
 	count = count + i;
@@ -52,6 +44,6 @@ int	ft_pointer(unsigned long s, int count)
 		return (ft_putstr("(nil)", count));
 	write(1, "0x", 2);
 	count = count + 2;
-	count = ft_hex2(s, count, 'x');
+	count = ft_hex2(s, count);
 	return (count);
 }
