@@ -6,7 +6,7 @@
 /*   By: jhaddadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:33:11 by jhaddadi          #+#    #+#             */
-/*   Updated: 2024/10/21 12:08:22 by jhaddadi         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:34:19 by jhaddadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -47,3 +47,11 @@ int	ft_pointer(unsigned long s, int count)
 	count = ft_hex2(s, count);
 	return (count);
 }
+
+/*int	main(void)
+{
+	int	x;
+	int *p = &x;
+	ft_pointer((unsigned long) p, 0);
+	return (0);
+}*/

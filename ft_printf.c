@@ -6,7 +6,7 @@
 /*   By: jhaddadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:06:07 by jhaddadi          #+#    #+#             */
-/*   Updated: 2024/10/07 12:56:41 by jhaddadi         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:37:41 by jhaddadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -15,21 +15,22 @@ static int	ft_type(const char str, va_list args, int count)
 {
 	if (str == 'c')
 		return (ft_putchar((char)va_arg(args, int), count));
-	if (str == 's')
+	else if (str == 's')
 		return (ft_putstr(va_arg(args, char *), count));
-	if (str == 'i' || str == 'd')
+	else if (str == 'i' || str == 'd')
 		return (ft_putnbr(va_arg(args, int), count));
-	if (str == 'u')
+	else if (str == 'u')
 		return (ft_unsigned(va_arg(args, unsigned int), count));
-	if (str == 'p')
+	else if (str == 'p')
 		return (ft_pointer(va_arg(args, unsigned long), count));
-	if (str == 'x')
-		return (ft_hex(va_arg(args, int), count, 'x'));
-	if (str == 'X')
-		return (ft_hex(va_arg(args, int), count, 'X'));
-	if (str == '%')
+	else if (str == 'x')
+		return (ft_hex(va_arg(args, unsigned int), count, 'x'));
+	else if (str == 'X')
+		return (ft_hex(va_arg(args, unsigned int), count, 'X'));
+	else if (str == '%')
 		return (ft_putchar('%', count));
-	return (count);
+	else
+		return (-1);
 }
 
 int	ft_printf(const char *str, ...)
