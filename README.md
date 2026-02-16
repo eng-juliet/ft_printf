@@ -30,7 +30,7 @@
 ## 🛠 Installation
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone eng-juliet/ft_printf
 cd ft_printf
 ```
 2. Build the library using the Makefile:
